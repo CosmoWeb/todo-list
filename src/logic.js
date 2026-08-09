@@ -1,9 +1,12 @@
-const todo = () => {
-    const title;
-    const description;
-    const dueDate;
-    const priority;
-    const project;
+const todo = (title, dueDate, priority, notes) => {
+    title = title;
+    dueDate = dueDate;
+    priority = priority;
+    notes = notes;
+    let check = false;
 
-    return {title, description, dueDate, priority, project};
+    return {title, dueDate, priority, notes, check};
 };
+
+export {todo};
+
