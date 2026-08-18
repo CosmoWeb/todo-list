@@ -9,6 +9,16 @@ const todoItem = (() => {
         return { title, dueDate, priority, notes, check };
     }; 
 
+    const editTodo = (todoObject) => {
+
+    };
+
+    const changePriority = (todoObject, newPriority) => {
+        todoObject.priority = newPriority;
+    }
+
+    /*Edit, change priority, set complete */
+
     return {addTodo};
 })();
 
