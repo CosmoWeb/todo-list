@@ -7,10 +7,17 @@ const todoItem = (() => {
         let check = false;
 
         return { title, dueDate, priority, notes, check };
-    };
+    }; 
 
     return {addTodo};
 })();
 
-export { todoItem };
+const project = (title) =>{
+    const title = title;
+    const storage = [];
+
+    return {title, storage};
+};
+
+export { todoItem, project };
 
