@@ -9,3 +9,7 @@ newTodo.toggleCheck();
 
 console.log(newTodo);
 
+const defaultProject = project("Default");
+defaultProject.addItem(newTodo.property);
+console.log(defaultProject); 
+

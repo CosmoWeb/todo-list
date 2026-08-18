@@ -6,7 +6,7 @@ const todoItem = (title, dueDate, priority, notes) => {
         notes,
         check: false
     }
-        
+
     const editTodo = (newTitle = property.title, newDueDate = property.dueDate, newPriority = property.priority, newNotes = property.notes) => {
         property.title = newTitle;
         property.dueDate = newDueDate;
@@ -22,14 +22,24 @@ const todoItem = (title, dueDate, priority, notes) => {
         property.check = !property.check;
     };
 
-    return {property, editTodo, changePriority, toggleCheck};
+    return { property, editTodo, changePriority, toggleCheck };
 };
 
-const project = (title) =>{
+const project = (title) => {
     title = title;
     const storage = [];
 
-    return {title, storage};
+    const addItem = (item) => storage.push(item);
+
+    const removeItem = (item, itemTitle) => {
+        if (itemTitle === item.title) {
+            const index = storage.indexOf(item);
+            storage.splice(index, 1);
+        }
+
+    };
+
+    return { title, storage, addItem, removeItem };
 };
 
 export { todoItem, project };
