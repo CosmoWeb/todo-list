@@ -1,5 +1,6 @@
 import "./style.css";
-import {todo} from "./logic.js";
+import {todoItem} from "./logic.js";
 
-const newTodo = todo("TTRPG prep session", "08-10-2026", "High", "The players have to die!");
+const newTodo = todoItem.addTodo("Study javascript", "18/08/26", "High", "At least one hour");
+
 console.log(newTodo);
