@@ -42,4 +42,6 @@ const project = (title) => {
     return { title, storage, addItem, removeItem };
 };
 
-export { todoItem, project };
+const projectStorage = [];
+
+export { todoItem, project, projectStorage };
