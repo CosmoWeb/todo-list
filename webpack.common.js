@@ -1,30 +1,33 @@
 import path from 'node:path';
- import { fileURLToPath } from 'node:url';
- import HtmlWebpackPlugin from 'html-webpack-plugin';
- import { compareAsc, format } from "date-fns";
+import { fileURLToPath } from 'node:url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { compareAsc, format } from "date-fns";
 
 
- const __filename = fileURLToPath(import.meta.url);
- const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
- export default {
-   entry: {
-     app: './src/index.js',
-   },
-   plugins: [
-     new HtmlWebpackPlugin({
-       title: 'Production',
-     }),
-   ],
+export default {
+    entry: {
+        app: './src/index.js',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Production',
+            template: './src/template.html', 
+            inject: 'head',
+            scriptLoading: 'defer',
+        }),
+    ],
     devtool: "eval-source-map",
     devServer: {
         watchFiles: ["./src/template.html"],
     },
-   output: {
-     filename: '[name].bundle.js',
-     path: path.resolve(__dirname, 'dist'),
-     clean: true,
-   },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+    },
     module: {
         rules: [
             {
@@ -45,4 +48,4 @@ import path from 'node:path';
             },
         ],
     },
- };
+};
